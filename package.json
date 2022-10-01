@@ -2,14 +2,21 @@
   "name": "workflow-monorepo",
   "private": true,
   "packageManager": "yarn@3.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cieloazul310/workflow-monorepo.git"
+  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "version": "lerna version --conventional-commits",
+    "format": "prettier --parser typescript --write \"packages/**/src/**/*.{js,ts}\""
   },
   "devDependencies": {
     "lerna": "^5.6.1",
+    "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   }
 }

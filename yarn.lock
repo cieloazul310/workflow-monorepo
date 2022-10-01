@@ -4464,6 +4464,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2.7.1":
+  version: 2.7.1
+  resolution: "prettier@npm:2.7.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
+  languageName: node
+  linkType: hard
+
 "proc-log@npm:^2.0.0, proc-log@npm:^2.0.1":
   version: 2.0.1
   resolution: "proc-log@npm:2.0.1"
@@ -5511,6 +5520,7 @@ __metadata:
   resolution: "workflow-monorepo@workspace:."
   dependencies:
     lerna: ^5.6.1
+    prettier: ^2.7.1
     typescript: ^4.8.4
   languageName: unknown
   linkType: soft

@@ -1,4 +1,3 @@
-
 export function add(...values: number[]) {
   return values.reduce((accum, curr) => accum + curr, 0);
 }
