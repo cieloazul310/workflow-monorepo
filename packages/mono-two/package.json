@@ -1,4 +1,12 @@
 {
-  "name": "mono-two",
-  "packageManager": "yarn@3.2.0"
+  "name": "@cieloazul310/mono-two",
+  "packageManager": "yarn@3.2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
