@@ -12,6 +12,7 @@
   "scripts": {
     "build": "lerna run build",
     "version": "lerna version --conventional-commits",
+    "publish": "lerna publish from-git",
     "format": "prettier --parser typescript --write \"packages/**/src/**/*.{js,ts}\""
   },
   "devDependencies": {
