@@ -1,0 +1,37 @@
+name: Test
+on:
+  pull_request:
+    types: [opened, synchronize]
+  
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # https://github.com/marketplace/actions/changed-files
+      - name: Get changed files in the src folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v31
+        with:
+          files: |
+            packages/*/src/**
+
+      - name: Setup Nodes
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: yarn
+      
+      - name: Install dependencies
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: yarn install --immutable
+      
+      - name: Test
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: yarn run test
