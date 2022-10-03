@@ -3,6 +3,7 @@
   "include": ["src/**/*"],
   "compilerOptions": {
     "outDir": "lib",
+    "baseUrl": ".",
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
     "sourceMap": true
