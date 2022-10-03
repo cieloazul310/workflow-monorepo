@@ -13,6 +13,7 @@
     "build": "lerna run build",
     "version": "lerna version --conventional-commits",
     "publish": "lerna publish from-git",
+    "typecheck": "lerna run typecheck",
     "eslint": "eslint --fix \"packages/*/src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --parser typescript --write \"packages/**/src/**/*.{js,ts}\"",
     "prepare": "husky install",
