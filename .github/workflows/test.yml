@@ -4,6 +4,7 @@ on:
     types: [opened, synchronize]
     paths:
       - packages/*/src/**
+      - packages/*/package.json
   
 jobs:
   test:
@@ -22,7 +23,7 @@ jobs:
           cache: yarn
       
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
       
       - name: Test
         run: yarn run test
