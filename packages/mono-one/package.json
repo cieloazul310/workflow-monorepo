@@ -11,6 +11,6 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@cieloazul310/mono-two": "workspace:^"
+    "@cieloazul310/mono-two": "0.0.1-alpha.0"
   }
 }
