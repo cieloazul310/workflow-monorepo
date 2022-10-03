@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "prebuild": "rm -rf lib",
-    "build": "tsc"
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^4.8.4"
