@@ -4,5 +4,6 @@
   "useNx": true,
   "useWorkspaces": true,
   "packages": ["packages/*"],
+  "ignoreChanges": [".yarn", ".yarnrc.yml",  "**/__tests__/**", "**/*.md", ".eslintrc.js", "jest.config.ts"],
   "version": "0.0.1-beta.0"
 }
