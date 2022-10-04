@@ -20,7 +20,7 @@ jobs:
       
       - name: Yarn identity
         run: |
-          YARN_VERSION=${{strings.Split((node -p 'require("./package.json").version'), "@")[1]}}
+          YARN_VERSION=$(node -p 'require("./package.json").version')
           echo "YARN_VERSION=${YARN_VERSION}" >> $GITHUB_ENV
 
       - name: Upgrade yarn
