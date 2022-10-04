@@ -18,11 +18,16 @@ jobs:
           node-version: 'lts/*'
           cache: yarn
       
-      - name: Upgrade yarn
-        run: yarn set version stable
+      - name: Setup .yarnrc.yml
+        run: |
+          yarn config set npmScopes.my-org.npmRegistryServer "https://npm.pkg.github.com"
+          yarn config set npmScopes.my-org.npmAlwaysAuth true
+          yarn config set npmScopes.my-org.npmAuthToken $NPM_AUTH_TOKEN
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
 
       - name: Check version
         run: yarn --version
     
       - name: Install
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install --immutable
