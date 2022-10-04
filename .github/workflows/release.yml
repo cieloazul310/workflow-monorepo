@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install --immutable --immutable-cache --check-cache
 
       - name: Set current version
         env:
