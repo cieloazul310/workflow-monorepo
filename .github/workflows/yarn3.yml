@@ -1,0 +1,26 @@
+name: Yarn 3
+on:
+  push:
+    branches:
+      - release-flow
+
+jobs:
+  install:
+    name: Use yarn 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Nodes
+        uses: actions/setup-node@v3
+        with:
+          nodeVersion: 'lts/*'
+          cache: yarn
+      
+      - name: Upgrade yarn
+        run: yarn set version from sources
+
+      - name: Check version
+        run: yarn --version
+    
