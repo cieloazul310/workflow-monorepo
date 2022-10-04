@@ -20,7 +20,7 @@ jobs:
       
       - name: Yarn identity
         run: |
-          YARN_VERSION=$(node -p 'require("./package.json").version')
+          YARN_VERSION=$(node -p 'require("./package.json").packageManager')
           echo "YARN_VERSION=${YARN_VERSION}" >> $GITHUB_ENV
 
       - name: Upgrade yarn
