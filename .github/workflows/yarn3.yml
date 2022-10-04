@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       
       - name: Setup Nodes
         uses: actions/setup-node@v3
@@ -20,8 +18,13 @@ jobs:
           node-version: 'lts/*'
           cache: yarn
       
+      - name: Yarn identity
+        run: |
+          YARN_VERSION=$(strings.Split((node -p 'require("./package.json").version'), "@")[1])
+          echo "YARN_VERSION=${YARN_VERSION}" >> $GITHUB_ENV
+
       - name: Upgrade yarn
-        run: yarn set version from sources --branch main
+        run: yarn set version $YARN_VERSION
 
       - name: Check version
         run: yarn --version
