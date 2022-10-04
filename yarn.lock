@@ -412,12 +412,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cieloazul310/mono-one@workspace:packages/mono-one"
   dependencies:
-    "@cieloazul310/mono-two": ^0.0.1-alpha.0
+    "@cieloazul310/mono-two": ^0.0.1-beta.0
     typescript: ^4.8.4
   languageName: unknown
   linkType: soft
 
-"@cieloazul310/mono-two@^0.0.1-alpha.0, @cieloazul310/mono-two@workspace:packages/mono-two":
+"@cieloazul310/mono-two@^0.0.1-beta.0, @cieloazul310/mono-two@workspace:packages/mono-two":
   version: 0.0.0-use.local
   resolution: "@cieloazul310/mono-two@workspace:packages/mono-two"
   dependencies:
