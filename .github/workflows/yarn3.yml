@@ -17,14 +17,9 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: yarn
-      
-      - name: Yarn identity
-        run: |
-          YARN_VERSION=$(node -p 'require("./package.json").packageManager')
-          echo "YARN_VERSION=${YARN_VERSION}" >> $GITHUB_ENV
 
       - name: Upgrade yarn
-        run: yarn set version $YARN_VERSION
+        run: yarn set version 3.2.0
 
       - name: Check version
         run: yarn --version
