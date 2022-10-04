@@ -51,9 +51,9 @@ jobs:
       - name: Version
         run: |
           if [ ${{ github.base_ref }} = prerelease ]; then
-            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+            yarn run version --conventional-prerelease --preid beta --yes
           else
-            npx lerna version --conventional-commits --conventional-graduate --yes
+            yarn run version --conventional-graduate --yes
           fi
       
       - name: Publish
