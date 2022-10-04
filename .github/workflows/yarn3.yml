@@ -15,11 +15,11 @@ jobs:
       - name: Setup Nodes
         uses: actions/setup-node@v3
         with:
-          nodeVersion: 'lts/*'
+          node-version: 'lts/*'
           cache: yarn
       
       - name: Upgrade yarn
-        run: yarn set version from sources
+        run: yarn set version stable
 
       - name: Check version
         run: yarn --version
