@@ -53,16 +53,3 @@ jobs:
 
       - name: Check diff
         run: git diff
-      
-      - uses: technote-space/get-diff-action@v6
-        with:
-          PATTERNS: |
-            +(src|__tests__)/**/*.ts
-            !src/exclude.ts
-          FILES: |
-            yarn.lock
-            .yarn/*
-      
-      - name: Show diff
-        if: env.GIT_DIFF
-        run: echo ${{ env.GIT_DIFF }}
