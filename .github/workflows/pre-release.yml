@@ -37,9 +37,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Clear .yarnrc.yml yarnPath
-        run: yarn config unset yarnPath
-
       - name: Set current version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
