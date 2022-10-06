@@ -6,14 +6,9 @@ on:
       - main
       - prerelease
 
-permissions:
-  contents: write
-  pull-requests: write
-  packages: write
-
 jobs:
-  version:
-    name: Version
+  check-diff:
+    name: Check diff
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
