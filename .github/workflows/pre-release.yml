@@ -33,6 +33,12 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Clear .yarnrc.yml yarnPath
+        run: yarn config unset yarnPath
+
+      - name: Check yarn version
+        run: yarn --version
         
       - name: Install dependencies
         run: yarn install --immutable
