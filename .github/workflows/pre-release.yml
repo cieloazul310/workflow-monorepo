@@ -1,20 +1,14 @@
-name: Release
+name: Release test
 on:
   pull_request:
-    types: [closed]
+    types: [opened, synchronize]
     branches:
       - main
       - prerelease
 
-permissions:
-  contents: write
-  pull-requests: write
-  packages: write
-
 jobs:
-  version:
-    name: Version
-    if: github.event.pull_request.merged == true
+  check-diff:
+    name: Check diff
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,13 +42,5 @@ jobs:
           CURRENT_VERSION=$(node -p 'require("./lerna.json").version')
           echo "CURRENT_VERSION=${CURRENT_VERSION}" >> $GITHUB_ENV
 
-      - name: Version
-        run: |
-          if [ ${{ github.base_ref }} = prerelease ]; then
-            yarn run version --conventional-prerelease --preid beta --yes
-          else
-            yarn run version --conventional-graduate --yes
-          fi
-      
-      - name: Publish
-        run: yarn run publish --yes
+      - name: Check diff
+        run: git diff
