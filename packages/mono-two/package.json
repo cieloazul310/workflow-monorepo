@@ -4,6 +4,14 @@
   "packageManager": "yarn@3.2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cieloazul310/workflow-monorepo.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "tsc",

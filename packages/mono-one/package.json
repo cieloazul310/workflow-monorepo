@@ -2,6 +2,14 @@
   "name": "@cieloazul310/mono-one",
   "version": "0.0.2",
   "packageManager": "yarn@3.2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cieloazul310/workflow-monorepo.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
