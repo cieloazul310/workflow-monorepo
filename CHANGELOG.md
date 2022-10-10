@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-beta.0](https://github.com/cieloazul310/workflow-monorepo/compare/v0.0.3-beta.0...v0.1.0-beta.0) (2022-10-10)
+
+### Features
+
+- **mono-two:** add divide ([bdabd5b](https://github.com/cieloazul310/workflow-monorepo/commit/bdabd5bea682c1d488d774b44de7a8a69d0b4d14))
+
 ## [0.0.3-beta.0](https://github.com/cieloazul310/workflow-monorepo/compare/v0.0.2...v0.0.3-beta.0) (2022-10-08)
 
 **Note:** Version bump only for package workflow-monorepo
