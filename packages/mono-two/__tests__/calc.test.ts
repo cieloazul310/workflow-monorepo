@@ -1,4 +1,4 @@
-import { add, multiply } from '../src/calc';
+import { add, multiply, divide } from '../src/calc';
 
 describe('add', () => {
   it('0 value', () => {
@@ -33,5 +33,29 @@ describe('multiply', () => {
   });
   it('4 values', () => {
     expect(multiply(1, 2, 3, 4)).toBe(24);
+  });
+});
+
+describe('divide', () => {
+  it('0 value', () => {
+    expect(divide()).toBeCloseTo(1);
+  });
+  it('1 value', () => {
+    expect(divide(1)).toBeCloseTo(1);
+  });
+  it('2 values', () => {
+    expect(divide(1, 2)).toBeCloseTo(1 / 2);
+  });
+  it('3 values', () => {
+    expect(divide(1, 2, 3)).toBeCloseTo(1 / 6);
+  });
+  it('4 values', () => {
+    expect(divide(1, 2, 3, 4)).toBeCloseTo(1 / 24);
+  });
+
+  it('Includes zero', () => {
+    expect(() => {
+      divide(2, 1, 0);
+    }).toThrow();
   });
 });
